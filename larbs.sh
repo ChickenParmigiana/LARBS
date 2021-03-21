@@ -1,5 +1,5 @@
 #!/bin/sh
-# Luke's Auto Rice Boostrapping Script (LARBS)
+# Luke's Auto Rice Boostrapping Script (LARBS) <https://github.com/LukeSmithxyz>
 # adapted by Roger Webb <admin@abyssalvoid.xyz>
 # License: GNU GPLv3
 
@@ -25,23 +25,23 @@ grepseq="\"^[PGV]*,\""
 error() { clear; printf "ERROR:\\n%s\\n" "$1"; exit;}
 
 welcomemsg() { \
-	dialog --title "Welcome!" --msgbox "Welcome to Luke's Auto-Rice Bootstrapping Script!\\n\\nThis script will automatically install a fully-featured Linux desktop, which I use as my main machine.\\n\\n-Adrian" 10 60
+	dialog --title "Welcome!" --msgbox "Void Linux, ChickenParm setup!\\n\\nGood Luck, Explorer!!\\n\\n-ChickenParm" 10 60
 	}
 
 getuser() { \
 	# Prompts user for their username.
-	name=$(dialog --inputbox "First, please enter the username you created during the Void Linux install process." 10 60 3>&1 1>&2 2>&3 3>&1) || exit
+	name=$(dialog --inputbox "First, please the username you installed void with." 10 60 3>&1 1>&2 2>&3 3>&1) || exit
 	repodir="/home/$name/repos"; sudo -u $name mkdir -p "$repodir"
 	while ! echo "$name" | grep "^[a-z_][a-z0-9_-]*$" >/dev/null 2>&1; do
 		name=$(dialog --no-cancel --inputbox "Username not valid. Be sure your username contains valid characters: lowercase letters, - or _." 10 60 3>&1 1>&2 2>&3 3>&1)
 	done ;}
 
 preinstallmsg() { \
-	dialog --title "Enter The Void..." --yes-label "Let's go!" --no-label "No, nevermind!" --yesno "The rest of the installation will now be totally automated, so you can sit back and relax.\\n\\nIt will take some time, but when done, you can relax even more with your complete system.\\n\\nNow just press <Let's go!> and the system will begin installation!" 13 60 || { clear; exit; }
+	dialog --title "Enter The Void..." --yes-label "Warp!" --no-label "Abort Mission" --yesno "Blast-Off, just sit back and enjoy the ride.\\n\\nIt will take some time.\\n\\nNow just <Warp!> and the system will begin launch!" 13 60 || { clear; exit; }
 	}
 
 maininstall() { # Installs all needed programs from main repo.
-	dialog --title "LARBS Installation" --infobox "Installing \`$1\` ($n of $total). $1 $2" 5 70
+	dialog --title "Warping, Roast Chicken" --infobox "Cataloging stars" \`$1\` ($n of $total). $1 $2" 5 70
 	installpkg "$1"
 	}
 
@@ -86,7 +86,7 @@ putgitrepo() { # Downloads a gitrepo $1 and places the files in $2 only overwrit
 
 finalize(){ \
 	dialog --infobox "Preparing welcome message..." 4 50
-	dialog --title "All done!" --msgbox "Congrats! Provided there were no hidden errors, the script completed successfully and all the programs and configuration files should be in place.\\n\\nTo run the new graphical environment, log out and log back in as your new user, then run the command \"startx\" to start the graphical environment (it will start automatically in tty1).\\n\\n.t Adrian" 12 80
+	dialog --title "Done!" --msgbox "Congrats! Provided there were no hidden errors, we\'re in.\\n\\nTo run the new graphical environment, re-log and startx.\\n\\n - ChickenParm" 12 80
 	}
 
 ### THE ACTUAL SCRIPT ###
