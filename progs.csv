@@ -77,6 +77,7 @@
 ,abook,"is a terminal based address book."
 ,urlview,"outputs urls in mail to browser."
 ,xrdb,"applies Xresources values."
+,ttf-linux-libertine,"font!"
 G,https://github.com/LukeSmithxyz/mutt-wizard.git,"run this and get your email auto configured in minutes."
 G,https://github.com/ChickenParmigiana/dwmblocks.git,"serves as the modular status bar."
 G,https://github.com/ChickenParmigiana/dmenu.git,"runs commands and provides a UI for selection."
